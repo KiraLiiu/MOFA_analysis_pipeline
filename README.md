@@ -43,9 +43,9 @@ A minimal, standalone implementation of Multi-Omics Factor Analysis (MOFA) and M
 - All results are saved in the `results/` directory (no subfolders by default, just a `.gitkeep` file).
 
 ## .gitignore Policy
-- All raw data和大体量结果默认不上传，保留目录结构（通过 .gitkeep）。
-- 可上传小型示例数据和分析脚本、配置文件。
-- 详见 `.gitignore` 文件注释。
+- All raw data and large results are not uploaded by default; only the directory structure is kept (using `.gitkeep`).
+- Example data, scripts, and configuration files can be uploaded.
+- See the `.gitignore` file for details.
 
 ## Requirements
 - R >= 4.0
