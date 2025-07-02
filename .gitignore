@@ -1,0 +1,44 @@
+# MOFA + MultiGSEA Standalone .gitignore (Minimal)
+# --------------------------------------
+# 保留目录结构，忽略大体量原始数据和敏感数据，但允许示例数据和结果文件可被追踪。
+
+# 数据目录
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+data/metadata/*
+!data/metadata/.gitkeep
+!data/metadata/sample_info.xlsx
+
+# 结果目录
+results/*
+!results/.gitkeep
+
+# R 和系统文件
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+.Rprofile
+.DS_Store
+Thumbs.db
+
+# IDE 和临时文件
+.vscode/
+.idea/
+*.tmp
+*.temp
+*.log
+*.out
+
+# Jupyter 和 Conda
+.ipynb_checkpoints/
+.conda/
+
+# 其他
+logs/
+temp/
+cache/

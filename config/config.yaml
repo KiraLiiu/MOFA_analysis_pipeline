@@ -1,0 +1,74 @@
+# MOFA + MultiGSEA Standalone Analysis Configuration
+# ================================================
+# Configuration for standalone MOFA and MultiGSEA multi-omics analysis pipeline.
+
+project:
+  name: "MOFA + MultiGSEA Standalone Analysis"
+  description: "Standalone multi-omics integration and pathway enrichment using MOFA and MultiGSEA."
+  version: "1.0.0"
+  date_created: "2024-01-01"
+  author: "Bioinformatics Team"
+
+# Data paths
+data:
+  raw:
+    metabolomics: "data/raw/metabolomics/"
+    proteomics: "data/raw/proteomics/"
+    transcriptomics: "data/raw/transcriptomics/"
+  processed:
+    metabolomics: "data/processed/metabolomics_normalized/"
+    proteomics: "data/processed/proteomics_normalized/"
+    transcriptomics: "data/processed/transcriptomics_normalized/"
+  metadata: "data/metadata/sample_info.xlsx"
+
+# Analysis parameters
+analysis:
+  mofa:
+    num_factors: 3                # Number of MOFA factors
+    convergence_mode: "slow"      # "fast", "medium", "slow"
+    scale_views: false            # Whether to scale each omics layer
+    seed: 42                      # Random seed
+    max_iterations: 1000          # Maximum training iterations
+    tolerance: 0.01               # Convergence tolerance
+  multigsea:
+    databases: ["kegg", "reactome"]  # Pathway databases
+    organism: "mmusculus"         # Species: "hsapiens", "mmusculus", etc.
+    pvalue_threshold: 0.05        # P-value cutoff
+    fdr_threshold: 0.1            # FDR cutoff
+    min_genes: 5                  # Minimum genes per pathway
+    max_genes: 500                # Maximum genes per pathway
+
+# Quality control parameters
+qc:
+  missing_value_threshold: 0.5    # Max allowed missingness per feature
+  variance_threshold: 1.0         # Min variance per feature
+  outlier_method: "iqr"           # Outlier detection: "iqr", "zscore", "mad"
+
+# Output settings
+output:
+  base_dir: "results/"
+  mofa_dir: "results/mofa_analysis/"
+  tables_dir: "results/tables/"
+  figures_dir: "results/figures/"
+  formats: ["pdf", "svg", "png"]
+  plot_width: 12
+  plot_height: 8
+  dpi: 300
+
+# Computational resources
+resources:
+  threads: 4
+  memory: "8G"
+  parallel: true
+
+# File formats
+formats:
+  data: ["csv", "xlsx", "txt"]
+  results: ["csv", "xlsx", "rds"]
+  figures: ["pdf", "svg", "png"]
+
+# References
+references:
+  species: "mouse"
+  genome: "mm10"
+  annotation: "gencode.vM25"
