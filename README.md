@@ -1,4 +1,4 @@
-# MOFA + MultiGSEA Analysis Pipeline (Standalone)
+# MOFA + MultiGSEA Analysis Pipeline
 
 ## Overview
 A minimal, standalone implementation of Multi-Omics Factor Analysis (MOFA) and MultiGSEA pathway enrichment analysis for integrating transcriptomics, proteomics, and metabolomics data.
