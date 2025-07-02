@@ -1,7 +1,7 @@
 # MOFA + MultiGSEA Analysis Pipeline
 
 ## Overview
-A minimal, standalone implementation of Multi-Omics Factor Analysis (MOFA) and MultiGSEA pathway enrichment analysis for integrating transcriptomics, proteomics, and metabolomics data.
+An implementation of Multi-Omics Factor Analysis (MOFA) and MultiGSEA pathway enrichment analysis for integrating transcriptomics, proteomics, and metabolomics data.
 
 ## Directory Structure (Minimal)
 ```
@@ -20,20 +20,15 @@ A minimal, standalone implementation of Multi-Omics Factor Analysis (MOFA) and M
 ```
 
 ## Quick Start
-1. **Setup**
-   ```r
-   source("0_setup/01_project_setup.R")
-   setup_project()
-   ```
-2. **Configure**
+1. **Configure**
    Edit `config/config.yaml` with your parameters.
-3. **Add Data**
+2. **Add Data**
    Place your preprocessed data (all omics) in `data/processed/`:
    - `data/processed/metabolomics.csv`
    - `data/processed/proteomics.csv`
    - `data/processed/transcriptomics.csv`
    - `data/metadata/sample_info.xlsx`
-4. **Run Analysis**
+3. **Run Analysis**
    ```r
    source("scripts/run_complete_pipeline.R")
    run_pipeline()
@@ -52,9 +47,9 @@ A minimal, standalone implementation of Multi-Omics Factor Analysis (MOFA) and M
 - Packages: MOFA2, multiGSEA, tidyverse, yaml, here
 
 ## Citation
-- MOFA2: Argelaguet, R. et al. (2020). Multi-Omics Factor Analysis. Molecular Systems Biology, 16(6), e9192.
-- MultiGSEA: Cite the multiGSEA package appropriately
+- MOFA: Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets Mol Syst Biol. (2018) 14: e8124 https://doi.org/10.15252/msb.20178124
+- MultiGSEA: Canzler, S., Hackermüller, J. multiGSEA: a GSEA-based pathway enrichment analysis for multi-omics data. BMC Bioinformatics 21, 561 (2020). https://doi.org/10.1186/s12859-020-03910-x
 
 ---
-*This is a minimal standalone version of the MOFA analysis pipeline. For a more comprehensive multi-omics project, see the main repository.*
+*This is a minimal version of the MOFA analysis pipeline. For a more comprehensive multi-omics project, see the main repository.*
  
